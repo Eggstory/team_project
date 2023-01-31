@@ -25,4 +25,20 @@ public class BoardService {
 
         return  list.stream().map(BoardResponseDto::new).collect(Collectors.toList());
     }
+
+    // 특정 게시글 불러오기
+    public Board boardView(Long board_idx) {
+
+        return boardRepository.findById(board_idx).get();
+    }
+
+    public void write(Board board) {
+
+        boardRepository.save(board);
+
+    }
+
+
+
+
 }

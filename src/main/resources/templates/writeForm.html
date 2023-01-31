@@ -1,0 +1,69 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입 화면</title>
+  <script>
+	function checkValue() {
+
+		if(!document.userInfo.userName.value) {
+			alert("이름을 입력해주세요");
+			document.getElementById('userName').focus();
+			return false;
+		}
+		if(!document.userInfo.boardTitle.value) {
+			alert("제목을 입력해주세요");
+			document.getElementById('boardTitle').focus();
+			return false;
+		}
+		if(!document.userInfo.boardContent.value) {
+			alert("내용을 입력해주세요");
+			document.getElementById('boardContent').focus();
+			return false;
+		}
+		return true;
+	}
+
+  function history_back() {
+    history.back();
+  }
+
+</script>
+</head>
+<body>
+
+<h1>글쓰기</h1>
+
+<form action="/board/writeAction" method="post" name="userInfo" onsubmit="return checkValue();">
+
+  <table border="1">
+    <input type="hidden" name="boardIdx" id="boardIdx">
+    <tr>
+      <td>이름</td>
+      <td>
+        <input type="text" name="boardName" id="boardName" maxlength="50" />
+      </td>
+    </tr>
+    <tr>
+      <td>제목</td>
+      <td>
+        <input type="text" name="boardTitle" id="boardTitle" maxlength="50" />
+      </td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>
+        <input type="text" name="boardContent" id="boardContent" maxlength="50" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" value="글쓰기" />
+        <input type="button" value="목록보기" onclick="history_back()" />
+      </td>
+    </tr>
+  </table>
+
+</form>
+
+</body>
+</html>

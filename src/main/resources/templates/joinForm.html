@@ -1,10 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>회원가입 화면</title>
+	<title>글쓰기</title>
 	<script>
 	function checkValue() {
-		
+
 		if(!document.userInfo.userId.value) { //empty: null, 길이 0
 			alert("이름을 입력해주세요");
 			document.getElementById('userId').focus();
@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<h1>회원가입 화면</h1>
+<h1>글쓰기</h1>
 
 <form action="joinAction" method="post" name="userInfo" onsubmit="return checkValue();">
 

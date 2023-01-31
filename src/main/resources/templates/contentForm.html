@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+  function history_back() {
+    history.back();
+  }
+
+  function delete() {
+
+  }
+  </script>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <td>번호</td>
+    <td th:text="${ dto.board_idx }"></td>
+  </tr>
+  <tr>
+    <td>조회수</td>
+    <td th:text="${ dto.board_hit }"></td>
+  </tr>
+  <tr>
+    <td>이름</td>
+    <td th:text="${ dto.board_name }"></td>
+  </tr>
+  <tr>
+    <td>제목</td>
+      <td th:text="${ dto.board_title }"></td>
+  </tr>
+  <tr>
+    <td>내용</td>
+      <textarea th:text="${ dto.board_content }">글내용</textarea>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" value="글쓰기" />
+      <input type="button" value="목록보기" onclick="history_back()" />
+      <input type="button" value="삭제하기" onclick="" />
+    </td>
+  </tr>
+</table>
+</body>
+</html>
