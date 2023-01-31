@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0 auto;
+        padding: 0 auto;
+        overflow: hidden;
+      }
+
+      h2 {
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+<table border="1px" width="500px">
+    <h2>글 내용</h2>
+    <tr>
+        <td>번호</td>
+        <td><input type="text" /></td>
+    </tr>
+
+    <tr>
+        <td>조회수</td>
+        <td><input type="text" value="4" /></td>
+    </tr>
+    <tr>
+        <td>이름</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr height="100px">
+        <td>내용</td>
+        <td><textarea></textarea></td>
+    </tr>
+
+    <td colspan="5">
+        <button>수정하기</button>
+        <button>목록보기</button>
+        <button>삭제하기</button>
+    </td>
+</table>
+<br />
+<table border="1px" width="500px">
+    <tr>
+        <td>댓글<textarea></textarea></td>
+    </tr>
+    <tr>
+        <td>별명 <input type="text" /></td>
+    </tr>
+    <tr>
+        <td><button>댓글달기</button></td>
+    </tr>
+</table>
+<br />
+<table border="1px" width="500px">
+    <tr>
+        <td>별명</td>
+        <td>내용</td>
+        <td>날짜</td>
+        <td>삭제</td>
+    </tr>
+    <tr>
+        <td>삼봉사</td>
+        <td>홍길동</td>
+        <td>변사또</td>
+        <td>사임당</td>
+    </tr>
+</table>
+
+<script>
+      /* 웹브라우저 back키 누를때, 페이지 재로딩 => 조회수 증가 */
+      window.onpageshow = function (event) {
+        if (
+          event.persisted ||
+          (window.performance && window.performance.navigation.type == 2)
+        ) {
+          document.location.reload();
+        }
+      };
+    </script>
+</body>
+</html>
